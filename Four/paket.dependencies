@@ -1,3 +1,5 @@
 source https://api.nuget.org/v3/index.json
 
 storage: none
+nuget System.ServiceModel.Primitives
+nuget System.ServiceModel.Syndication 9.0.4
