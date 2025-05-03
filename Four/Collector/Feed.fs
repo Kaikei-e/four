@@ -14,8 +14,8 @@ module Feed =
       match response.IsSuccessStatusCode with
       | true ->
         let! stream = response.Content.ReadAsStreamAsync() |> Async.AwaitTask
-        use reader = XmlReader.Create(stream)
-        let feed = SyndicationFeed.Load(reader)
+        use reader = XmlReader.Create stream
+        let feed = SyndicationFeed.Load reader
         return Some feed
       | false ->
         return None
